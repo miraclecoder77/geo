@@ -1,7 +1,77 @@
 <main class="layout">
     <div class="wrapper">
+        <!-- navbar -->
         <nav class="nav">
             <h1>Geo</h1>
+            <div class="theme-div">
+                <figure (click)="defaultTheme()" >
+                    <img *ngIf="darkEl" src="../../assets/moon.png" alt="dark">
+                </figure>
+                <span *ngIf="darkEl">Dark Mode</span>
+                <img (click)="lightTheme()" *ngIf="lightEl" src="../../assets/sun.png" alt="light">
+                <span *ngIf="lightEl">Light Mode</span>
+            </div>
         </nav>
+        <!-- navbar ends here -->
+        <!-- search and filter -->
+        <div class="container-lg"> 
+            <div class="search-div">
+                <input type="text" placeholder="search for countries...">
+            </div>
+            <div class="dropdown">
+                <button (click)="toggleFilter()">
+                    filter by region
+                </button>
+                <ul class="dropdown-menu" *ngIf="showFilter" >
+                    <li class="dropdown-item">
+                        <input class="input" type="checkbox">
+                        <label >Africa</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input class="input" type="checkbox">
+                        <label >America</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input class="input" type="checkbox">
+                        <label >Asia</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input class="input" type="checkbox">
+                        <label >Europe</label>
+                    </li>
+                    <li class="dropdown-item">
+                        <input class="input" type="checkbox">
+                        <label >Oceania</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- search and filter ends here -->
+        <!-- countries display grid wrapper -->
+        <div class="countries-grid-wrapper">
+            <div class="grid-display card">
+                <figure class="flag-display">
+                    <img src="" alt="flag">
+                </figure>
+                <div class="info-display">
+                    <h3>Germany</h3>
+                    <div class="info-grp">
+                        <span class="title">Population</span><span class="data">: 81,770,900</span>
+                        <span class="title">Region</span><span class="data">: Europe</span>
+                        <span class="title">Capital</span><span class="data">: Berlin</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-display">
+                
+            </div>
+            <div class="grid-display">
+                
+            </div>
+            <div class="grid-display">
+                
+            </div>
+        </div>
+         <!-- countries display grid wrapper -->
     </div>
 </main>
