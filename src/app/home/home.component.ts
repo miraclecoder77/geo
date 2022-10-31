@@ -1,5 +1,6 @@
-import { ThemeTogglerService } from './../shared/theme-toggler.service';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../shared/api.service';
+import { ThemeTogglerService } from '../shared/theme-toggler.service';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  
   darkEl:boolean = false;
   lightEl:boolean = true;
   showFilter: boolean = false;
-
-  constructor(private themeToggle:ThemeTogglerService) { }
+  countryData:any = [];
+  constructor(
+    private themeToggle:ThemeTogglerService,
+    private api:ApiService
+  ) { }
 
   ngOnInit(): void {
+    this.showCountry();
   }
-
-//  window.addEventListener('click', toggleTheme, false);
 
   defaultTheme() {
     console.log('dark');
@@ -34,6 +37,16 @@ export class HomeComponent implements OnInit {
   //show filter
   toggleFilter() {
     this.showFilter = !this.showFilter;
+  }
+
+  showCountry(){
+    this.api.getCountries()
+    .subscribe(
+      (res) => {
+        this.countryData = res;
+        console.log(res);
+      }
+    )
   }
 
 }

@@ -2,6 +2,7 @@
     min-height: 100vh;
     width: 100%;
     background: var(--bgprimary);
+    overflow-y: auto;
 }
 .wrapper {
     display: flex;
@@ -19,7 +20,7 @@
     padding: 0 2rem;
     margin-bottom: 1rem;
     h1 {
-        color: var(--textprimary);
+        color: var(--textprimary);  
     }
     span {
         color: var(--textprimary);
@@ -110,14 +111,19 @@ button:hover {
 .grid-display {
     height: 10rem;
     margin: 0 3rem;
-    // background: red;
+    // margin-bottom: 2rem;
 }
 .card {
     display: grid;
-    grid-template-rows: 1fr 1.3fr;
+    grid-template-rows: 1fr 1fr;
 }
 .flag-display{
     background-color: #fff;
+    img{
+        // height: 100%;
+        width: 100%;
+        background: red;
+    }
 }
 .info-display {
     background: var(--primary);
@@ -154,7 +160,7 @@ button:hover {
     }
     .grid-display {
         height: 100%;
-        margin: 0;
+        margin: 0;   
     }
     .info-display{
         padding-left: 5%;

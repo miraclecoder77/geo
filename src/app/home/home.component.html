@@ -49,27 +49,18 @@
         <!-- search and filter ends here -->
         <!-- countries display grid wrapper -->
         <div class="countries-grid-wrapper">
-            <div class="grid-display card">
+            <div class="grid-display card" *ngFor="let country of countryData">
                 <figure class="flag-display">
-                    <img src="" alt="flag">
+                    <img  [src]="country.flags.svg" alt="flag">
                 </figure>
                 <div class="info-display">
-                    <h3>Germany</h3>
+                    <h3>{{country.name.common}}</h3>
                     <div class="info-grp">
-                        <span class="title">Population</span><span class="data">: 81,770,900</span>
-                        <span class="title">Region</span><span class="data">: Europe</span>
-                        <span class="title">Capital</span><span class="data">: Berlin</span>
+                        <span class="title">Population</span><span class="data">:{{country.population}}</span>
+                        <span class="title">Region</span><span class="data">: {{country.region}}</span>
+                        <span class="title">Capital</span><span class="data">: {{country.capital}}</span>
                     </div>
                 </div>
-            </div>
-            <div class="grid-display">
-                
-            </div>
-            <div class="grid-display">
-                
-            </div>
-            <div class="grid-display">
-                
             </div>
         </div>
          <!-- countries display grid wrapper -->
